@@ -1,0 +1,31 @@
+<%= form_for @order, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label "Ваше Имя", :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :name, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label "Емейл", :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :email, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label "Информация", :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_area :description, :rows=>3,:class => 'text_area' %>
+    </div>
+  </div>
+    
+  <div class="control-group">
+    <%= f.label "Файл", :class => 'control-label' %>
+    <div class="controls">
+      <%= f.file_field :file %>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.submit "Оформить заказ", :class => 'btn btn-primary' %>
+  </div>
+<% end %>
