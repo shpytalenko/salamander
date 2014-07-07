@@ -1,0 +1,87 @@
+<% content_for :sidebar do %>
+  <%= render partial: "categories" %>
+<% end %>
+
+<% @products.each do |product|%>
+<div class="row-fluid well" >
+  <div class="span4">
+    <%= image_tag product.mainphoto.url(:medium) , :class=>"img-polaroid"%>
+  
+  </div>
+  <div class="span8 ">
+    <h3><%= link_to product.name, product_path(product) %></h3>
+    <p class="muted"> <%= product.description %></p>
+    <hr>
+    <span class="label label-info"><%= product.price %> грн. </span>
+    <div class="pull-right">
+    <%= link_to "Редактировать", edit_product_path(product), :class => 'btn btn-mini' %>
+    <%= link_to "Удалить", product_path(product), :method => :delete,
+        :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+        :class => 'btn btn-mini btn-danger' %>
+        </div>
+
+  </div>
+</div>
+<% end %>
+<%
+=begin
+%>
+<%- model_class = Product -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:name) %></th>
+      <th><%= model_class.human_attribute_name(:description) %></th>
+      <th><%= model_class.human_attribute_name(:price) %></th>
+      <th><%= model_class.human_attribute_name(:category_id) %></th>
+      <th><%= model_class.human_attribute_name(:active) %></th>
+      <th><%= model_class.human_attribute_name(:mainphoto_file_name) %></th>
+      <th><%= model_class.human_attribute_name(:mainphoto_content_type) %></th>
+      <th><%= model_class.human_attribute_name(:mainphoto_file_size) %></th>
+      <th><%= model_class.human_attribute_name(:mainphoto_updated_at) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @products.each do |product| %>
+      <tr>
+        <td><%= link_to product.id, product_path(product) %></td>
+        <td><%= product.name %></td>
+        <td><%= product.description %></td>
+        <td><%= product.price %></td>
+        <td><%= product.category_id %></td>
+        <td><%= product.active %></td>
+        <td><%= product.mainphoto_file_name %></td>
+        <td><%= product.mainphoto_content_type %></td>
+        <td><%= product.mainphoto_file_size %></td>
+        <td><%= product.mainphoto_updated_at %></td>
+        <td><%=l product.created_at %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_product_path(product), :class => 'btn btn-mini' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      product_path(product),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%
+=end
+%>
+<hr>
+<br>
+<% if @category %>
+  <%= link_to "Добавить", new_product_path(:category => @category.id), :class => 'btn btn-primary' %>
+<% else %>
+  <%= link_to "Добавить", new_product_path, :class => 'btn btn-primary' %>
+<% end %>

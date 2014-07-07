@@ -54,13 +54,13 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="brand" href="/">Апостиль в Англии</a>
+            <a class="brand" href="/">Salamander-UA</a>
             <!-- Responsive Navbar Part 2: Place all navbar contents you want collapsed withing .navbar-collapse.collapse. -->
             <div class="nav-collapse collapse">
               <ul class="nav">
                 <li class="active"><a href="/">Главная</a></li>
-                <li><a href="/about">О Нас</a></li>
-                <li><a href="/create_order">Сделать заказ</a></li>
+                <li><a href="/products?category=1">Продукция</a></li>
+                <li><a href="/create_order">Услуги</a></li>
                 <li><a href="/contact">Контакты</a></li>
               </ul>
             </div><!--/.nav-collapse -->
@@ -80,9 +80,9 @@
           <img src="http://www.travelforteens.com/wp-content/uploads/2013/11/tft-sliders-web_0003_England.jpg" alt="">
           <div class="container">
             <div class="carousel-caption">
-              <h1>ЛЕГАЛИЗАЦИЯ ДОКУМЕНТОВ</h1>
-              <p class="lead">Апостиль – это специальный штамп, который ставится на официальный документ, выданный в одной стране, подтверждающий этим его подлинность. После проставления штампа Апостиль, документ приобретает полную юридическую силу в другой стране.</p>
-              <a class="btn btn-large btn-primary" href="#">Sign up today</a>
+              <h1>Система Streamline</h1>
+              <p class="lead">С системой Streamline мы создали новый оконный профиль с идеальным дизайном и техническими характеристиками для современных окон 21 века.</p>
+              <a class="btn btn-large btn-primary" href="#">Детальней</a>
             </div>
           </div>
         </div>
@@ -90,9 +90,9 @@
           <img src="http://www.sensorfleck.de/wordpress/wp-content/uploads/16.jpg" alt="">
           <div class="container">
             <div class="carousel-caption">
-              <h1>Апостиль для документов выданых за границей!</h1>
-              <p class="lead">Апостиль проставляется только в той стране, в которой был выдан документ, а осуществляют процедуру проставления специально уполномоченные органы...</p>
-              <a class="btn btn-large btn-primary" href="#">Learn more</a>
+              <h1>Система Design 3D</h1>
+              <p class="lead">Эстетически привлекательная система Salamander Design 3D с плавными линиями и монтажной шириной 76 мм является не только олицетворением визуального совершенства</p>
+              <a class="btn btn-large btn-primary" href="#">Купить</a>
             </div>
           </div>
         </div>
@@ -100,9 +100,9 @@
           <img src="http://twbs.github.io/bootstrap/2.3.2/assets/img/examples/slide-03.jpg" alt="">
           <div class="container">
             <div class="carousel-caption">
-              <h1>Что такое апостиль и как он выглядит?</h1>
-              <p class="lead"> Апостиль - специальный штамп, который проставляется одним из министерств Украины. Проставляется на официальных документах выданных в Украине. Апостилем подтверждается подпись и должность человека подписавшего документ</p>
-              <a class="btn btn-large btn-primary" href="#">Browse gallery</a>
+              <h1>Система Brügmann AD</h1>
+              <p class="lead"> Система Brügmann AD – убеждает с первого взгляда. При ближайшем рассмотрении Ваша убежденность только растет.</p>
+              <a class="btn btn-large btn-primary" href="#">Узнать больше</a>
             </div>
           </div>
         </div>
@@ -115,21 +115,12 @@
       <!-- Three columns of text below the carousel -->
       <div class="row">
         <div class="span3">
-         <div class="well sidebar-nav">
-                <h3>Sidebar</h3>
-                <ul class="nav nav-list">
-                  <li class="nav-header">Sidebar</li>
-                  <li><%= link_to "Оформление заказа", "/path1"  %></li>
-                  <li><%= link_to "Подробней об Апостиле", "/path2"  %></li>
-                  <li><%= link_to "Еще чтото ...", "/path3"  %></li>
-                </ul>
-                   </div>
-                <div class="well">
-                             <h4>Наши контакты:</h4>
+          <%= yield :sidebar %>
+            <div class="well">
+              <h4>Наши контакты:</h4>
                 <address>
-  <strong>Twitter, Inc.</strong><br>
-  795 Folsom Ave, Suite 600<br>
-  San Francisco, CA 94107<br>
+  <strong>Salamander-UA</strong><br>
+  г. Киев, ул. Шевченка 23г<br>
   <abbr title="Phone">P:</abbr> (123) 456-7890
 </address>
 

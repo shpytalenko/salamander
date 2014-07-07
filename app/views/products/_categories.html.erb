@@ -1,0 +1,8 @@
+  <div class="well sidebar-nav">
+    <h5>Каталог</h5>
+    <ul class="nav nav-list">
+      <% Category.all.each do |category| %>
+        <li><%= link_to "#{category.name}", products_path(:category => category.id)  %></li>
+      <% end %>
+    </ul>
+    </div>
